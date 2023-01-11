@@ -1,0 +1,124 @@
+.navbar {
+    /* margin-top: -3px; */
+    height: 50px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 0.10fr 0.15fr;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: aqua solid 1px;
+}
+
+.title {
+    margin-left: 40px;
+    margin-bottom: 5px;
+    align-self:flex-end;
+    font-size:x-large;
+    font-weight:500;
+    color: black;
+}
+
+.countries{
+    width: 150px;
+    height: 30px;
+    background-color: transparent;
+    border: aqua solid 1.8px;
+    border-radius: 10%;
+    color: black;
+    font-family: 'Source Serif Pro', serif;
+    font-weight: 300;
+    font-size: 17px;
+    animation: fadein 2s;
+}
+
+
+.btn1 {
+    width: 130px;
+    height: 30px;
+    background-color: transparent;
+    border: aqua solid 1.8px;
+    border-radius: 10%;
+    color: black;
+    font-family: 'Source Serif Pro', serif;
+    font-weight: 300;
+    font-size: 17px;
+    animation: fadein 2s;
+}
+
+.btn1:hover {
+    cursor: pointer;
+    color: black;
+    background-color: grey;
+}
+
+.btn2 {
+    width: 80px;
+    height: 30px;
+    background-color: transparent;
+    border: aqua solid 1.8px;
+    border-radius: 10%;
+    margin-right: 20px;
+    color: black;
+    font-family: 'Source Serif Pro', serif;
+    font-weight: 300;
+    font-size: 17px;
+    animation: fadein 2s;
+}
+
+.btn2:hover {
+    cursor: pointer;
+    color: black;
+    background-color: grey;
+}
+
+.btn3 {
+    width: 140px;
+    height: 30px;
+    background-color: transparent;
+    border: aqua solid 1.8px;
+    border-radius: 10%;
+    color: black;
+    font-family: 'Source Serif Pro', serif;
+    font-weight: 300;
+    font-size: 17px;
+    animation: fadein 2s;
+}
+
+.btn3:hover {
+    cursor: pointer;
+    color: black;
+    background-color: grey;
+}
+
+@keyframes fadein {
+    0% {
+        opacity:0;
+    }
+    50%{
+        opacity:0.5;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@media screen and (max-width: 500px){
+    /* .navbar{
+        display: flex;
+        flex-direction: row;
+    } */
+    .btn1 {
+        margin-left: 20px;;
+    }
+    .title{
+        align-content: center;
+        font-size: large;
+        justify-self: flex-start;
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+}
