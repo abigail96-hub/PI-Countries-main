@@ -9,14 +9,15 @@ module.exports = (sequelize) => {
       primaryKey: true,
       autoIncrement: true
   },
+   
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true               //no almacena datos duplicados
+      unique: true
      
     },
     difficult: {
-      type: DataTypes.ENUM('1', '2', '3', '4', '5'), // valores dentro de la lista definida
+      type: DataTypes.ENUM('1', '2', '3', '4', '5'),
       allowNull: false
     },
     duration:{
@@ -26,8 +27,6 @@ module.exports = (sequelize) => {
     season: {
       type: DataTypes.ENUM('Summer', 'Autumn', 'Winter', 'Spring'),
       allowNull: false
-    },
-  },
-  {timestamps: false});
-
+    }
+  });
 };

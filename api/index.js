@@ -31,10 +31,10 @@ const { getApiData } = require('./src/controllers/country/getApiData');
 
 
 
-const port = process.env.PORT || 3001;
+
 conn.sync({ force: true }).then(() => {
   getApiData()
-  server.listen(port,() => {
+  server.listen(3001,() => {
  
     console.log('%s listening at 3001'); // eslint-disable-line no-console
    
