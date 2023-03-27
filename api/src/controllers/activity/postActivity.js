@@ -48,8 +48,8 @@ const postActivity = async (req, res) => {
        include: Activity
    })
 
-   country.map((c) => (
-       c.addActivity(activity)
+   country.map( async (c) => (
+      await  c.addActivity(activity)
    ))
 
    res.status(201).json({ message: "Todo salio bien" })
