@@ -13,8 +13,8 @@ export default function LandingPage(){
       <div className={style.over}></div>
       <video className={style.video} src={video} autoPlay loop muted />
       <div className={style.texto}>
-        <h1 className={style.h1}>Bievenido</h1>
-        <p className={style.p}>Disfruta el viaje</p>
+        <h1 className={style.h1}>Welcome</h1>
+        <p className={style.p}>Enjoy the trip</p>
 
         <Link to="/home" className={style.neon}>
           <span></span>
@@ -22,7 +22,7 @@ export default function LandingPage(){
           <span></span>
           <span></span>
 
-          Iniciar
+          Start
         </Link>
 
 

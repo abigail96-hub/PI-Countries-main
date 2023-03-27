@@ -6,12 +6,17 @@ const getAllActivities = async (req, res) => {
 
     try {
           const activities = await Activity.findAll({
-           include: [Country]
+           include: Country
 
           })
+        if(activities){
+         res.json(activities)
+        }
+        else{
+            throw new Error ('Activities Not Found')
+        }
         
-         return activities
-
+         
     } catch (error) {
         res.json({message: error.message})
     }

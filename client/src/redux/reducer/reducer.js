@@ -12,7 +12,7 @@ function reducer(state = initialState, action) {
             return {
                 ...state,
                 countries: action.payload,
-                allCountries: action.payload,
+                allCountries: action.payload
             }
         case 'GET_COUNTRY_BY_NAME':
             return {
@@ -40,47 +40,38 @@ function reducer(state = initialState, action) {
             return {
                 ...state,
                 countries: continentFilter,
-                byContinentCountries: continentFilter
+
             }
-        // case 'FILTER_BY_CONTINENT':
-        //     return{
-        //         ...state,
-        //         countries: action.payload,
-        //         byContinentCountries: action.payload
-        //     }
         case 'GET_ACTIVITIES':
             return {
                 ...state,
                 activities: action.payload,
             }
-            case 'FILTER_BY_ACTIVITIES':
-                return{
+        case 'FILTER_BY_ACTIVITIES':
+            let country = []
+            if (action.payload === 'All') {
+                country = state.allCountries
+            }
+            else {
+                state.allCountries?.map(e => e.Activities?.map(f => f.name === action.payload && (country.push(e))))
+
+            }
+
+            return {
 
                 ...state,
-                countries: state.activities.filter((activity) => activity.name === action.payload)
-                .map((c) => c.countries)[0]
+                countries: country
+            }
 
-                }
-        // case 'FILTER_BY_ACTIVITIES':
-        //     let countriesActivities = document.getElementById("firstSelect").value === 'All'
-        //         ? state.allCountries
-        //         : state.byContinentCountries
-        //     let activityFilter = action.payload === 'All'
-        //         ? countriesActivities
-        //         : countriesActivities.filter(country => country.activities && country.activities.map(a => a.name).includes(action.payload))
-        //     return {
-        //         ...state,
-        //         countries: activityFilter,
-        //     }
-
-            // filteredCountries: state.activities.filter((activity) => activity.name === action.payload)
-            //     .map((c) => c.countries)[0]
         case 'POST_ACTIVITY':
             return {
                 ...state
             }
         case 'ORDER_BY':
             let sorted = state.countries
+            if (action.payload === 'All') {
+                sorted = state.countries
+            }
             if (action.payload === 'asc') {
                 sorted.sort(function (a, b) {
                     if (a.name > b.name) {

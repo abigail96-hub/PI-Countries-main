@@ -32,7 +32,7 @@ const { getApiData } = require('./src/controllers/country/getApiData');
 
 
 
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => {
   getApiData()
   server.listen(3001,() => {
  

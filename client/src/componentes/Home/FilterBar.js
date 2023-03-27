@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import s from './FilterBar.module.css';
 
 
-export default function FilterBar({ handleClickActivity, handleClickFilter, handleClickContinent }) {
+export default function FilterBar({ handleClickActivity, handleClickFilter, handleClickContinent, handleClickReset }) {
 
     const activities = useSelector(state => state.activities)
 
@@ -47,11 +47,11 @@ export default function FilterBar({ handleClickActivity, handleClickFilter, hand
                     <option value='minPop'>Descending population</option>
                     <option value='maxArea'>Largest Area</option>
                     <option value='minArea'>Smaller Area</option>
-                </select>
+                    </select>
             </div>
-            {/* <div className={s.btn}>
-                <button onClick={e => handleClickReset(e)}>Reset filters</button> */}
+            <div className={s.btn}>
+                <button onClick={e=> handleClickReset(e)}>  Reset  </button>
             </div>
-        
+        </div>
     )
 }

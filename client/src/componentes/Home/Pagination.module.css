@@ -1,65 +1,85 @@
-.bar{
-    width: 100%;
+.numero{
+    width: 80%;
+    padding-bottom: 5px;
     align-items:center;
     display:inline-flex;
     justify-content:center;
     position: relative;
-}
-
-.bar ul{
-    display: inline;
-    /* border: #c0c0c0 solid 1.8px; */
-    margin-left: 190px;
-}
-
-.bar li{
-    height:32px;
-    width:32px;
-    text-align: center;
-    list-style: none;
-    margin-left: 1px;
-    display: inline;
-    border-radius: 100%;
-} 
-
-#number{
-    height:32px;
-    width:32px;
-    border-radius: 100%;
+    background-color: rgb(15 23 42);;
+    color: white;
+    font-size: medium;
     font-family: 'Source Serif Pro', serif;
 }
 
-#number:hover{
-    cursor: pointer;
-    background-color: grey;
-}
-
-.active{
-    background-color: aqua;
-}
-
 .prev{
-    height:45px;
-    width:45px;
-    border-radius: 100%;
+    outline: 0;
+        font: inherit;
+        /* Personalize */
+        width: 4em;
+        height: 2.6em;
+        padding: 5 5em 1 5em;
+        background-color: transparent;
+        color: white;
+        border-radius: 0.35em;
+        box-shadow: 1 1 1em 0 rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        margin-left: 20px;
+        align-self: center;
+        border-color: rgb(14 165 233);
 }
+
 .next{
-    height:45px;
-    width:45px;
-    border-radius: 100%;
-}
-.next:hover{
+    outline: 0;
+    font: inherit;
+    /* Personalize */
+    width: 4em;
+    height: 2.6em;
+    padding: 5 5em 1 5em;
+    background-color: transparent;
+    color: white;
+    border-radius: 0.35em;
+    box-shadow: 1 1 1em 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    background-color: grey;
+    margin-left: 20px;
+    align-self: center;
+    border-color: rgb(14 165 233);
+
+} 
+
+#number{
+    height:25px;
+    width:32px;
+    border-radius: 100%;
+    font-family: 'Source Serif Pro', serif;
+    background-color: rgb(15 23 42);
+    border-color: rgb(14 116 144);
+    color: whitesmoke;
+   
 }
+
 .prev:hover{
     cursor: pointer;
-    background-color: grey;
+    background-color: rgb(14 165 233) ;;
 }
 
-li:active{
-    background-color: #fcca46;
+.next:hover{
+  cursor: pointer;
+  background-color: rgb(14 165 233) ;;
+
 }
+
+
+
+
+.x{
+    background-color: aqua;
+    border-color: whitesmoke;
+    background-color: azure;
+    
+    
+}
+
+
 
 
 @media screen and (max-width: 1260px){

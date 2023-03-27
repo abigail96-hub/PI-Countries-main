@@ -10,22 +10,20 @@ export default function SearchBar({ setCurrentPage, name, setName}){
     e.preventDefault();
     setName(e.target.value);
     dispatch(getCountryByName(e.target.value));
-    setCurrentPage(1);
-    document.getElementById("firstSelect").getElementsByTagName('option')[0].selected = 'selected';
-    document.getElementById("secondSelect").getElementsByTagName('option')[0].selected = 'selected';
-    document.getElementById("thirdSelect").getElementsByTagName('option')[0].selected = 'selected';
+   
 }
 
 return (
 
     <div className={s.all}>   
     <span className={s.search}>
-        Search country by name:
+     
     </span>
     <form className={s.bar}  >
         <input  type='text' 
                 id='name' 
-                placeholder="Country name..." 
+                placeholder="Name...🔍" 
+
                 autoComplete='off' 
                 value={name}
                 className={s.input}

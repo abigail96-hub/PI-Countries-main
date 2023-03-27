@@ -16,8 +16,13 @@ return async function (dispatch){
     }
  
 } 
-   
+  
 }
+
+
+
+
+
 
 
 
@@ -51,7 +56,7 @@ export function getCountryByName(name){
         })
     }
     catch(error){
-        console.log('Error getCountryByName'+ error)
+        alert('Country Not Found')
     }
 }
 }
@@ -97,7 +102,7 @@ export function getActivities(){
   return async function (dispatch) {
       try{
           let allActivities = await axios.get("http://localhost:3001/activity/");
-          // console.log("---------",allActivities.data)
+        
           return dispatch({
               type: 'GET_ACTIVITIES',
               payload: allActivities.data

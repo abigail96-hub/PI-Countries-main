@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getActivities, getCountries, postActivity } from '../../redux/actions/actions';
 import { useHistory } from 'react-router-dom';
 import s from './activityCreate.module.css';
-// import tacho from '../../images/tacho.png';
 import { Link } from 'react-router-dom';
 import Loading from '../Loading/LoadingComponent';
 
@@ -42,7 +41,7 @@ export default function ActivityCreate() {
         return errors
     }
 
-    const [input, setInput] = useState({
+    const [input, setInput] = useState({   
         name: '',
         difficult: '',
         duration: '',
@@ -109,7 +108,7 @@ export default function ActivityCreate() {
         setInput({
             name: '',
             difficult: '',
-            duration: '',
+            duration: 0,
             season: '',
             countries: []
         })
@@ -132,7 +131,7 @@ export default function ActivityCreate() {
 
     return (
         <div className={s.fondo}>
-            <div id={s.rect}>
+            <div  key={input.id} id={s.rect}>
                 <div id={s.title}>
                     <h1> Create Activity</h1>
                 </div>
@@ -238,7 +237,7 @@ export default function ActivityCreate() {
                             <option value="">Please select</option>
                             {
                                 allCountries && allCountries.map(c => (
-                                    <option value={c.name} key={c.id}> {c.name} </option>
+                                    <option value={c.id} key={c.id}> {c.name} </option>
                                 ))
                             }
                         </select>
@@ -254,7 +253,7 @@ export default function ActivityCreate() {
                         disabled={!input.name || !input.season || !input.difficult || !input.duration || !input.season || input.countries.length === 0 ||
                             errors.name || errors.season || errors.difficult || errors.duration || errors.season || errors.countries}
                         className={s.btn}>
-                        Create Activity
+                        Create Activity 🚵🏿‍♂️
                     </button>
                 </form>
             </div>
@@ -268,8 +267,8 @@ export default function ActivityCreate() {
                             <span>
                                 {c}
                             </span>
-                            <button onClick={() => handleDelete(c)}>
-                                <img  alt="x" width='17px' height='17px' />
+                            <button onClick={() => handleDelete(c)}> 🗑️
+                                {/* <img src={borrar} alt="x" width='17px' height='17px' /> */}
                             </button>
                         </div>
                     )
@@ -278,7 +277,7 @@ export default function ActivityCreate() {
             </div>
             <div className={s.btnback}>
                 <Link to='/home'>
-                    <button> Back to countries </button>
+                    {/* <button> Back to countries </button> */}
                 </Link>
             </div>
         </div>

@@ -10,6 +10,8 @@ import SearchBar from './SearchBar';
 import Loading from '../Loading/LoadingComponent';
 
 
+
+
 export default function Home() {
 
     const dispatch = useDispatch();
@@ -17,20 +19,61 @@ export default function Home() {
     const [orden, setOrden] = useState('');
     let [resetChange, setResetChange] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
-    const [countriesPerPage, setCountriesPerPage] = useState(10);
+    const [countriesPerPage, setCountriesPerPage] = useState(8);
     const lastIndex = currentPage * countriesPerPage;
     const firstIndex = lastIndex - countriesPerPage;
     const currentCountries = allCountries?.slice(firstIndex, lastIndex);
     const [name, setName] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-    // const [second, setSecond] = useState(false)
+   
 
     // const lastIndex = currentPage === 1 ? 9 : currentPage * countriesPerPage - 1
     // const firstIndex = currentPage === 1 ? 0 : lastIndex - countriesPerPage                
 
-    const paginado = (pageNumber) => {
-        setCurrentPage(pageNumber);
-    }
+
+
+    // const paginado = (pageNumber) => {
+    //     setCurrentPage(pageNumber);
+    // }
+
+
+// const nextHanlder = () => {
+//     const totalElements  = allCountries.length;
+//     const nextPage = currentPage + 1;
+//     const firstIndex = nextPage * countriesPerPage;
+
+//     if(firstIndex === totalElements) return;
+//     setCurrentPage(nextPage)
+
+// }
+
+// const prevHanlder = () => {
+
+// setCurrentPage(prev => prev -1)
+     
+
+
+// }
+
+
+
+function handlePrev(e){
+    e.preventDefault();
+
+    setCurrentPage(prev => prev -1);
+}
+
+function handleNext(e){
+    e.preventDefault();
+    const totalElements  = allCountries.length;
+    const nextPage = currentPage + 1;
+    const firstIndex = nextPage * countriesPerPage;
+
+    if(firstIndex === totalElements) return;
+    setCurrentPage(prev => prev +1);
+}
+
+
 
 
     useEffect(() => {
@@ -44,6 +87,7 @@ export default function Home() {
     function handleClickContinent(e) {
         e.preventDefault()
         dispatch(filterByContinent(e.target.value));
+        setCurrentPage(1);
        
     }
 
@@ -52,21 +96,20 @@ export default function Home() {
         dispatch(filterByActivities(e.target.value));
 
     }
-
     function handleClickFilter(e) {
         e.preventDefault();
         dispatch(orderBy(e.target.value));
-        setOrden(`Ordenado ${e.target.value} ${resetChange}`); //solo para setear estado y renderizar
-    }
+        setOrden(`Ordenado ${e.target.value} ${resetChange}`); }
 
 
 
-    //     if(second) {
-    //     setTimeout(() => {
-    //           setSecond(false)
-    //         }, 1300)
-    //         return <Loading />
-    //    }
+        function handleClickReset(e){
+            e.preventDefault();
+            dispatch(getCountries(setIsLoading));
+        }
+
+
+  
    
 
     if (isLoading) {
@@ -81,6 +124,7 @@ export default function Home() {
                         <SearchBar className={s.search} setCurrentPage={setCurrentPage} name={name} setName={setName} />
                         <FilterBar className={s.filter}
                             handleClickActivity={handleClickActivity}
+                            handleClickReset={handleClickReset} 
                             handleClickFilter={handleClickFilter}
                             handleClickContinent={handleClickContinent}
                         />
@@ -106,12 +150,41 @@ export default function Home() {
                         }
                     </div>
                 </div>
-                <Pagination countriesPerPage={countriesPerPage}
-                    allCountries={allCountries?.length}
-                    paginado={paginado}
-                    currentPage={currentPage}
+
+              
+
+                <Pagination 
+                allCountries={allCountries?.length}
+                countriesPerPage={countriesPerPage}
+                currentPage={currentPage}
+                handlePrev={handlePrev}
+                handleNext={handleNext}
+                // countriesPerPage={countriesPerPage}
+                //     allCountries={allCountries?.length}
+                //     paginado={paginado}
+                //     currentPage={currentPage}
                 />
+
+             {/* <footer>
+                
+                <div className={s.socialiconscontainer}>
+                <a href={"www.linkedin.com/in/abigail-cortés-sánchez-8252381a3"} class={s.socialicon}></a>
+                <a href="" class={s.socialicon}></a>
+                <a href="" class={s.socialicon}></a>
+                 </div>
+             
+             <ul className={s.menu}> 
+              <li className={s.item}>Github</li>
+             <li className={s.item}>linkedin</li>
+             <li className={s.item}>Henry Pi </li>
+             </ul> 
+             <span className={s.copyright}>&copy; 2023, Henry Countries Pi</span>
+             </footer> */}
+
+            
             </div>
+           
         </div>
+        
     )
 }

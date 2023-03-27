@@ -10,9 +10,17 @@ export default function NavBar({match}){
  return(
   <div className={style.navbar}>  
   <div className={style.title}> 
-  <span>Countries App </span>
+  <div>
+
+<Link to={'/'}> 
+<button className={style.btn3}> 
+<span> My Countries🌍App</span>
+   </button>
+    </Link>
+ 
+ </div>
+ </div>
   
-  </div>
 
 {
 
@@ -21,7 +29,7 @@ export default function NavBar({match}){
 <span>
 <Link to={'/home'}> 
 <button className={style.btn2}> 
-   Home 
+   Home🏚️
    </button>
     </Link>
  </span>
@@ -37,7 +45,7 @@ export default function NavBar({match}){
 <span> 
  <Link to={'/home/activity'}>
     <button className={style.btn3}> 
-       Create Activity
+       Create Activity 🚵🏿‍♂️
     </button>
  </Link>
 </span>

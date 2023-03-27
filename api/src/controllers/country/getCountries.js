@@ -7,9 +7,11 @@ const { Op } = require('sequelize');
 const getCountries = async (req, res) => {
 
     const { name } = req.query
+   
     try {
+   
         if(!name){
-        
+             
             const countries = await Country.findAll({
               include: Activity
 
@@ -17,7 +19,7 @@ const getCountries = async (req, res) => {
           res.json(countries)
         } else {
          const filterCountries = await Country.findAll({
-          
+           
             where: {
                 name:{[Op.like]: `%${name}%`}
             },

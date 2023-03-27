@@ -1,18 +1,22 @@
 import React from 'react'
 import s from './Pagination.module.css'
 
-export default function Pagination({ countriesPerPage, allCountries, paginado, currentPage}) {
+export default function Pagination({ handlePrev, handleNext, currentPage}) {
 
-    const pageNumbers = []
+    // const pageNumbers = []
 
-    for (let i = 1; i <= Math.ceil(allCountries / countriesPerPage); i++) {
-        pageNumbers.push(i)
-    }
+    // for (let i = 1; i <= Math.ceil(allCountries / countriesPerPage); i++) {
+    //     pageNumbers.push(i)
+    // }
 
     return (
         <div className={s.bar}>
-            <ul>
-                {/* <button className={s.prev} onClick={e => handlePrev(e)} disabled={currentPage - 1 === 0 ? true : false}> Prev </button> */}
+
+<h1 className={s.numero} >Pagina:{currentPage} </h1>
+<button  className={s.prev} onClick={handlePrev} disabled={currentPage === 1 ? true : false}> Prev</button>
+<button className={s.next} onClick={handleNext} disabled={currentPage === 24? true : false}> Next </button>
+
+            {/* <ul>
                 {pageNumbers &&
                     pageNumbers.map(number => (
                         <li key={number}>
@@ -20,8 +24,8 @@ export default function Pagination({ countriesPerPage, allCountries, paginado, c
                         </li>
                     ))
                 }
-                {/* <button className={s.next} onClick={e => handleNext(e)} disabled={currentPage >= pageNumbers.length ? true : false}> Next </button> */}
-            </ul>
+            
+            </ul> */}
         </div>
     )
 }

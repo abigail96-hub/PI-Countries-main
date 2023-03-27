@@ -4,13 +4,16 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-color: transparent;
+    font-family: 'Source Serif Pro', serif;
+    color: white;
+    background-color:  rgb(14 165 233);
     position: absolute;
     display: grid;
     grid-template-columns: 1fr 0.10fr 0.15fr;
     justify-content: space-between;
     align-items: center;
-    border-bottom: aqua solid 1px;
+    border-bottom: rgb(14 165 233) solid 1px;
+      
 }
 
 .title {
@@ -19,16 +22,16 @@
     align-self:flex-end;
     font-size:x-large;
     font-weight:500;
-    color: black;
+    color: whitesmoke;
 }
 
 .countries{
     width: 150px;
     height: 30px;
     background-color: transparent;
-    border: aqua solid 1.8px;
+    border: rgb(34 211 238) solid 1.8px;
     border-radius: 10%;
-    color: black;
+    color: whitesmoke;
     font-family: 'Source Serif Pro', serif;
     font-weight: 300;
     font-size: 17px;
@@ -37,32 +40,32 @@
 
 
 .btn1 {
-    width: 130px;
+    width: 200px;
     height: 30px;
     background-color: transparent;
-    border: aqua solid 1.8px;
-    border-radius: 10%;
-    color: black;
+    border: rgb(34 211 238) solid 1.8px;
+    border-radius: 13%;
+    color: whitesmoke;
     font-family: 'Source Serif Pro', serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 17px;
     animation: fadein 2s;
 }
 
 .btn1:hover {
     cursor: pointer;
-    color: black;
-    background-color: grey;
+    color:  rgb(15 23 42);
+    background-color: whitesmoke;
 }
 
 .btn2 {
-    width: 80px;
+    width: 100px;
     height: 30px;
     background-color: transparent;
-    border: aqua solid 1.8px;
-    border-radius: 10%;
+    border: rgb(14 165 233) solid 1.8px;
+    border-radius: 20%;
     margin-right: 20px;
-    color: black;
+    color: whitesmoke;
     font-family: 'Source Serif Pro', serif;
     font-weight: 300;
     font-size: 17px;
@@ -71,27 +74,28 @@
 
 .btn2:hover {
     cursor: pointer;
-    color: black;
-    background-color: grey;
+    color: rgb(15 23 42);
+    background-color:  rgb(14 165 233) solid 1.8px;
 }
 
 .btn3 {
-    width: 140px;
+    width: 178px;
     height: 30px;
     background-color: transparent;
-    border: aqua solid 1.8px;
-    border-radius: 10%;
-    color: black;
+    border: rgb(14 165 233) solid 1.8px;
+    border-radius: 20%;
+    color: whitesmoke;
     font-family: 'Source Serif Pro', serif;
     font-weight: 300;
-    font-size: 17px;
+    font-size: 20px;
     animation: fadein 2s;
 }
 
 .btn3:hover {
     cursor: pointer;
-    color: black;
-    background-color: grey;
+    color: rgb(15 23 42);
+    background-color:  rgb(14 165 233) solid 1.8px;
+
 }
 
 @keyframes fadein {

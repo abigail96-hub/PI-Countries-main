@@ -1,7 +1,8 @@
 .fondo {
-    background-image: url('../../fotos/actividades\ 1.jpg');
+    /* background-image: url('../../fotos/actividades\ 1.jpg'); */
+    background-color: rgb(15 23 42);;
     background-size: auto;
-    opacity: 0.87;
+    /* opacity: 0.87; */
     height: 740px;
     width:auto;
     /* margin-top: -20px; */
@@ -15,15 +16,17 @@
 #rect{
     display: grid;
     grid-template-rows: 1fr 6fr;
-    border: #c0c0c0 solid 1.8px;
+    
+    border: rgb(14 165 233) solid 1.8px;
     border-radius: 10px;
-    background-color: rgba(40,40,40);
+    background-color: rgba(5, 7, 12, 0.40);
     opacity: 0.9;
     height: 550px;
     width: 400px;  
     font-size:medium; 
-    color:#c0c0c0;
+    color:white;
     font-weight: 500;
+    font-family: sans-serif;
     position: relative;
     justify-content: center;
     align-self: flex-start;
@@ -108,9 +111,9 @@
     width: 140px;
     height: 30px;
     background-color: transparent;
-    border: #c0c0c0 solid 1.8px;
+    border: black solid 1.8px;
     border-radius: 10%;
-    color: #c0c0c0;
+    color:white;
     font-family: 'Source Serif Pro', serif;
     font-weight: 300;
     font-size: 17px;
@@ -127,23 +130,25 @@
 }
 
 .btn:disabled{
-    background-color: white;
-    color: #c0c0c0;
+    background-color:rgba(233, 236, 239, 0.8);
+    color: black;
     cursor: none;
+    border: rgb(14 165 233)
 }
 
 .rect2{
     display: grid;
     grid-template-rows: 1fr 6fr;
-    border: #c0c0c0 solid 1.8px;
+    border: rgb(14 165 233) solid 1.8px;
     border-radius: 10px;
-    background-color: rgba(40,40,40);
+    background-color: rgba(5, 7, 12, 0.40);
     opacity: 0.9;
     height: min-content;   
     width: 400px;  
     font-size:medium; 
-    color:#c0c0c0;
+    color:azure;
     font-weight: 500;
+    font-family: sans-serif;
     position: relative;
     top: 100px;
 }
@@ -152,7 +157,7 @@
     font-size: larger;
     display:flex;
     margin-left: 20px;
-    color: #c0c0c0
+    color: white
 }
 
 /* .countryselect {
@@ -174,6 +179,7 @@
     position: relative;
     top:3px;
     color: rgba(245, 240, 239);
+    background-color: transparent;
 }
 
 .country button{
@@ -183,11 +189,12 @@
     border: #c0c0c0 solid 1.8px;
     border-radius: 10px;
     height:min-content;
+    color: black;
 }
 
 .country button:hover{
   cursor:pointer;
-  background-color: rgba(233, 236, 239, 1);
+  background-color: rgb(14 165 233);
 }
 
 .btnback {
@@ -197,7 +204,7 @@
     right: 10px;
 }
 
-.btnback button {
+/* .btnback button {
     width: 155px;
     height: 30px;
     background-color: transparent;
@@ -209,12 +216,12 @@
     font-size: 17px;
     animation: fadein 3s;
     justify-self: center;
-}
+} */
 
 .btnback button:hover {
     cursor: pointer;
     color: black;
-    background-color: grey;
+    background-color: rgb(14 165 233);
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1200px){

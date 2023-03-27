@@ -6,8 +6,8 @@ export default function Loading (){
 
   return (
 
-  <div className={style.center}>
-  <div className={style.ring}> </div>
+  <div className={style.loader}>
+  {/* <div className={style.ring}> </div> */}
   <span > Loading ... </span> 
   
   </div>
